@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>AquaLern Sim – Aquaponik</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>AquaLern Sim</h1>
+          <p>Ein iPad-freundlicher Aquaponik-Simulator für Erdkunde.</p>
+        </div>
+        <button id="nextDayBtn" class="cta">Nächster Tag</button>
+      </header>
+
+      <section class="character-select card" id="characterSelect">
+        <h2>Wähle deinen Spielcharakter</h2>
+        <div class="characters" id="characters"></div>
+      </section>
+
+      <section class="dashboard">
+        <article class="sim card">
+          <canvas id="simCanvas" width="960" height="520" aria-label="Aquaponik Simulation"></canvas>
+          <div class="touch-controls">
+            <button data-action="feed">Fische füttern</button>
+            <button data-action="plant">Setzlinge pflanzen</button>
+            <button data-action="filter">Biofilter pflegen</button>
+            <button data-action="water">Wasser wechseln</button>
+            <button data-action="quiz">Fakten-Quiz</button>
+          </div>
+        </article>
+
+        <aside class="panel card">
+          <h2>Status</h2>
+          <ul id="stats"></ul>
+          <h3>Aufgaben</h3>
+          <ul id="tasks"></ul>
+          <h3>Lernfakten</h3>
+          <p id="factBox"></p>
+        </aside>
+      </section>
+
+      <section class="log card">
+        <h2>Ereignisprotokoll</h2>
+        <div id="eventLog"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
