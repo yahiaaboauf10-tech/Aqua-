@@ -1,0 +1,161 @@
+:root {
+  color-scheme: dark;
+  --bg: #051623;
+  --card: #0b2537;
+  --text: #e6f2ff;
+  --accent: #35c8ff;
+  --good: #58e986;
+  --warn: #f7d56a;
+  --bad: #ff7f7f;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #0c2f45 0%, var(--bg) 50%);
+  color: var(--text);
+}
+
+.app-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: max(12px, env(safe-area-inset-top)) 14px max(12px, env(safe-area-inset-bottom));
+  display: grid;
+  gap: 12px;
+}
+
+.card {
+  background: linear-gradient(165deg, #0c2a3e 0%, var(--card) 80%);
+  border: 1px solid #2a4f69;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  padding: 12px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.cta,
+button {
+  background: linear-gradient(135deg, #1fb7f0, #2fe9cf);
+  color: #042433;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  padding: 10px 14px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.character-select .characters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.character {
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid #34617f;
+  background: #10344b;
+  display: grid;
+  gap: 8px;
+}
+
+.character.selected {
+  outline: 2px solid var(--accent);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 2.1fr 1fr;
+  gap: 12px;
+}
+
+#simCanvas {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #3c6f8d;
+  background: linear-gradient(#0b2f45 0%, #0b3540 35%, #1f5f42 100%);
+  display: block;
+}
+
+.touch-controls {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.panel li {
+  padding: 6px;
+  border-radius: 10px;
+  background: #0f3044;
+  border: 1px solid #2f5f7d;
+}
+
+.log #eventLog {
+  margin-top: 8px;
+  max-height: 150px;
+  overflow: auto;
+  display: grid;
+  gap: 6px;
+}
+
+.log-item {
+  border-left: 3px solid var(--accent);
+  background: #0a3147;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.value-good {
+  color: var(--good);
+}
+
+.value-warn {
+  color: var(--warn);
+}
+
+.value-bad {
+  color: var(--bad);
+}
+
+@media (max-width: 1000px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .touch-controls {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
